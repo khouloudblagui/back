@@ -1,12 +1,11 @@
 eureka:
-  instance:
-    hostname: localhost
-
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
 server:
   port: 8090
+
 spring:
   application:
     name: careplan
@@ -16,9 +15,16 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/careplan
     username: root
-    password: rootpswd
+    password: root
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
+
+  servlet:
+    context-path: /careplan
+
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
