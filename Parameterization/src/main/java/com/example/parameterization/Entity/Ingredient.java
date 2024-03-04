@@ -1,34 +1,35 @@
 package com.example.parameterization.Entity;
-
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Entity
+@Table(name = "ingredient")
 public class Ingredient {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ingredient_ky", unique = true)
+    private Integer ingredientKy;
 
-    private String Ingredient_Name;
-    private String Ingredient_Desc;
+    @Column(name = "ingredient_name", nullable = false)
+    private String ingredientName;
 
-    public Ingredient(String ingredient_Name, String ingredient_Desc) {
-        Ingredient_Name = ingredient_Name;
-        Ingredient_Desc = ingredient_Desc;
-    }
+    @Column(name = "ingredient_desc", nullable = false)
+    private String ingredientDesc;
 
-    public String getIngredient_Name() {
-        return Ingredient_Name;
-    }
+    @OneToMany(mappedBy = "ing")
+    private List<MedicIngredientLink> MedicIngredientLinks;
 
-    public void setIngredient_Name(String ingredient_Name) {
-        Ingredient_Name = ingredient_Name;
-    }
-
-    public String getIngredient_Desc() {
-        return Ingredient_Desc;
-    }
-
-    public void setIngredient_Desc(String ingredient_Desc) {
-        Ingredient_Desc = ingredient_Desc;
-    }
 }
+
+
+
