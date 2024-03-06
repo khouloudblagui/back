@@ -29,10 +29,10 @@ public class ICD10Controller {
 
 
 
-    @PostMapping("add/{code}/{description}/{notes}")
-    public ResponseEntity<String> addICD10(@PathVariable String code, @PathVariable String description, @PathVariable String notes) {
+    @PostMapping("add/{iCode}/{iDescription}/{iNotes}")
+    public ResponseEntity<String> addICD10(@PathVariable String iCode, @PathVariable String iDescription, @PathVariable String iNotes) {
         try {
-            icd10Service.AddCode(code,description,notes);
+            icd10Service.AddCode(iCode,iDescription,iNotes);
             return ResponseEntity.status(HttpStatus.CREATED).body("ICD10 ajouté avec succès.");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Une erreur s'est produite lors de l'ajout de l'ICD10.");
@@ -40,10 +40,10 @@ public class ICD10Controller {
     }
 
 
-    @DeleteMapping("/delete/{code}")
-    public ResponseEntity<String> deleteICD10(@PathVariable String code) {
+    @DeleteMapping("/delete/{iCode}")
+    public ResponseEntity<String> deleteICD10(@PathVariable String iCode) {
         try {
-            icd10Service.deleteICD10(code);
+            icd10Service.deleteICD10(iCode);
             return ResponseEntity.status(HttpStatus.OK).body("ICD10 supprimé avec succès.");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -72,9 +72,9 @@ public class ICD10Controller {
     }
 
 
-    @GetMapping("/viewICD10Details/{code}")
-    public Optional<ICD10> viewICD10Details(@PathVariable String code) {
-        return icd10Service.viewDetailsICD10(code);
+    @GetMapping("/viewICD10Details/{iCode}")
+    public Optional<ICD10> viewICD10Details(@PathVariable String iCode) {
+        return icd10Service.viewDetailsICD10(iCode);
     }
 
     @GetMapping

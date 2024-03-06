@@ -24,46 +24,46 @@ public class ICD10Service {
         System.out.println("ICD10 ajouté avec succès.");
     }
 
-    public void AddCode(String code, String description,String notes ) {
-      if (!icd10repository.findICD10ByICD10Code(code).isPresent()) {
-          String chapter = String.valueOf(code.charAt(0));
-           String block = code.substring(1,3);
-         String category = String.valueOf(code.charAt(3));
-         String subcategory = code.substring(4,6);
-         String extension = String.valueOf(code.charAt(code.length()-1));
+    public void AddCode(String iCode, String iDescription,String iNotes ) {
+      if (!icd10repository.findICD10ByICD10Code(iCode).isPresent()) {
+          String aChapter = String.valueOf(iCode.charAt(0));
+           String aBlock = iCode.substring(1,3);
+         String aCategory = String.valueOf(iCode.charAt(3));
+         String aSubcategory = iCode.substring(4,6);
+         String AExtension = String.valueOf(iCode.charAt(iCode.length()-1));
             ICD10 icd10 = new ICD10();
-            icd10.setICD10Code(code);
-            icd10.setICD10Description(description);
-          icd10.setICD10Category(category);
-          icd10.setICD10Block(block);
-            icd10.setICD10Chapter(chapter);
-          icd10.setICD10Extension(extension);
-          icd10.setICD10Subcategory(subcategory);
-          icd10.setICD10Notes(notes);
+            icd10.setICD10Code(iCode);
+            icd10.setICD10Description(iDescription);
+          icd10.setICD10Category(aCategory);
+          icd10.setICD10Block(aBlock);
+            icd10.setICD10Chapter(aChapter);
+          icd10.setICD10Extension(AExtension);
+          icd10.setICD10Subcategory(aSubcategory);
+          icd10.setICD10Notes(iNotes);
             icd10repository.save(icd10);
             System.out.println("ICD10 ajouté avec succès.");
         } else {
-            System.out.println("ICD10 avec le code " + code + " existe dans la base.");
+            System.out.println("ICD10 avec le code " + iCode + " existe dans la base.");
         }
 
     }
 
 
-    public void deleteICD10(String code) {
-        Optional<ICD10> icd10 = icd10repository.findICD10ByICD10Code(code);
+    public void deleteICD10(String iCode) {
+        Optional<ICD10> icd10 = icd10repository.findICD10ByICD10Code(iCode);
         if (icd10.isPresent()) {
             icd10repository.delete(icd10.get());
             System.out.println("ICD10 supprimé avec succès.");
         } else {
-            System.out.println("ICD10 avec le code " + code + " introuvable.");
+            System.out.println("ICD10 avec le code " + iCode + " introuvable.");
         }
     }
 
 
-    public Optional<ICD10> viewDetailsICD10(String code) {
-        Optional<ICD10> icd10 = icd10repository.findICD10ByICD10Code(code);
+    public Optional<ICD10> viewDetailsICD10(String iCode) {
+        Optional<ICD10> icd10 = icd10repository.findICD10ByICD10Code(iCode);
         if (!icd10.isPresent()) {
-            System.out.println("ICD10 avec le code " + code + " introuvable.");
+            System.out.println("ICD10 avec le code " + iCode + " introuvable.");
         } else {
             System.out.println("ICD10 trouvé avec succès  voici les details associés a ce code  : " + icd10.get());
         }
