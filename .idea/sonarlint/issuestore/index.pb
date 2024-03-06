@@ -17,3 +17,7 @@ m
 =src/main/java/com/example/discovery/DiscoveryApplication.java,8\4\84718dbec8b8ba8214aa2e0e2948910a37506239
 |
 Lsrc/test/java/com/example/parameterization/SurgicalProcedureServiceTest.java,e\2\e2e12608544278da0e90bf3a91a4aba06c0afbc7
+y
+Isrc/main/java/com/example/parameterization/Repository/MedicationRepo.java,c\a\caf1d2c1bbd387ef8a3db8562e5d301136f34701
+y
+Isrc/main/java/com/example/parameterization/Repository/IngredientRepo.java,8\c\8c82455f7fcca163a137c1b3e96f273d4cf4b140

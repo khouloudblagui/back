@@ -14,39 +14,39 @@ import java.util.Map;
 @RequestMapping("/procedures")
 public class SurgicalProcedureController {
     @Autowired
-    private SurgicalProcedureService service;
+    private SurgicalProcedureService Iservice;
     @GetMapping
     public List<SurgicalProcedure> getAllProcedures() {
-        return service.getAllProcedures();
+        return Iservice.getAllProcedures();
     }
     @GetMapping ("/{id}")
     public SurgicalProcedure getProcedureById(@PathVariable("id") Long cptky) {
-        return service.getProcedureById(cptky);
+        return Iservice.getProcedureById(cptky);
     }
     @PostMapping ("/add")
     public SurgicalProcedure addProcedure(@RequestBody SurgicalProcedure procedure) {
-        return service.addProcedure(procedure);
+        return Iservice.addProcedure(procedure);
     }
     @PutMapping("/{id}")
     public SurgicalProcedure updateProcedure(@PathVariable long cptky, @RequestBody SurgicalProcedure procedure){
-        return service.updateProcedure(cptky, procedure);
+        return Iservice.updateProcedure(cptky, procedure);
     }
     @DeleteMapping("/{id}")
     public void deleteProcedure(@PathVariable long cptky){
-        service.deleteProcedure(cptky);
+        Iservice.deleteProcedure(cptky);
     }
     @PostMapping("/upload")
     public ResponseEntity<?> uploadData(@RequestParam("file") MultipartFile file){
-        this.service.saveSurgicalProcedureToDatabase(file);
+        this.Iservice.saveSurgicalProcedureToDatabase(file);
         return ResponseEntity
                 .ok(Map.of("Message" , " data uploaded and saved to database successfully"));
     }
     @GetMapping("/search")
     public List<SurgicalProcedure> searchProcedures(@RequestParam(required = false) String cptCode) {
         if (cptCode != null && !cptCode.isEmpty()) {
-            return service.searchByCptCode(cptCode);
+            return Iservice.searchByCptCode(cptCode);
         } else {
-            return service.getAllProcedures();
+            return Iservice.getAllProcedures();
         }
     }
 
