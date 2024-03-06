@@ -4,12 +4,12 @@ import com.example.parameterization.Enum.MedicationType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 public interface MedicationRepo extends JpaRepository<Medication, Integer> {
-    boolean existsByMedicationNameOrMedicationCode(String medicationName, String medicationCode);
-    boolean existsByMedicationNameOrMedicationCodeAndMedicationKyNot(String medicationName, String medicationCode, Integer medicationId);
+    boolean existsByMedicationNameOrMedicationCode(String imedicationName, String imedicationCode);
+    boolean existsByMedicationNameOrMedicationCodeAndMedicationKyNot(String imedicationName, String imedicationCode, Integer imedicationId);
 
-    List<Medication> findByMedicationNameContaining(String name);
+    List<Medication> findByMedicationNameContaining(String iname);
 
-    List<Medication> findByMedicationCode(String code);
+    List<Medication> findByMedicationCode(String icode);
 
-    List<Medication> findByMedicationType(MedicationType type);
+    List<Medication> findByMedicationType(MedicationType itype);
 }

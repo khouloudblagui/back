@@ -23,8 +23,8 @@ public class MedicationController {
 
     //AddUpload
     @PostMapping("/upload-data")
-    public ResponseEntity<?> uploadMedicationsData(@RequestParam("file") MultipartFile file){
-        this.MSer.savemedicationfile(file);
+    public ResponseEntity<?> uploadMedicationsData(@RequestParam("file") MultipartFile ifile){
+        this.MSer.savemedicationfile(ifile);
         return ResponseEntity
                 .ok(Map.of("Message" , " Medications data uploaded and saved to database successfully"));
     }
@@ -36,41 +36,41 @@ public class MedicationController {
 
     //Add
     @PostMapping(value="/add")
-    public ResponseEntity<String> saveMedication(@RequestBody Medication medications) {
-        boolean exists = MSer.medicationExists(medications.getMedicationName(), medications.getMedicationCode());
-        if (exists) {
+    public ResponseEntity<String> saveMedication(@RequestBody Medication imedications) {
+        boolean aexists = MSer.medicationExists(imedications.getMedicationName(), imedications.getMedicationCode());
+        if (aexists) {
             return ResponseEntity.badRequest().body("Le médicament existe déjà.");
         } else {
-            MSer.saveorUpdate(medications);
-            return ResponseEntity.ok("Médicament ajouté avec succès, ID : " + medications.getMedicationKy());
+            MSer.saveorUpdate(imedications);
+            return ResponseEntity.ok("Médicament ajouté avec succès, ID : " + imedications.getMedicationKy());
         }
     }
 
     //update
     @PutMapping(value="/edit/{Medication_Ky}")
-    public ResponseEntity<String> updateMedication(@RequestBody Medication medication, @PathVariable(name="Medication_Ky") Integer Medication_Ky) {
-        Medication existingMedication = MSer.findById(Medication_Ky);
+    public ResponseEntity<String> updateMedication(@RequestBody Medication imedication, @PathVariable(name="Medication_Ky") Integer iMedication_Ky) {
+        Medication aexistingMedication = MSer.findById(iMedication_Ky);
 
-        if (existingMedication == null) {
+        if (aexistingMedication == null) {
             return ResponseEntity.notFound().build();
         }
 
         // Vérifie si le nom ou le code est modifié en une valeur déjà existante
-        boolean exists = MSer.medicationExistsExcludingId(medication.getMedicationName(), medication.getMedicationCode(), Medication_Ky);
+        boolean exists = MSer.medicationExistsExcludingId(imedication.getMedicationName(), imedication.getMedicationCode(), iMedication_Ky);
         if (exists) {
             return ResponseEntity.badRequest().body("Le médicament existe déjà avec ce nom ou ce code.");
         }
 
         // Met à jour les attributs du médicament existant
-        existingMedication.setMedicationName(medication.getMedicationName());
-        existingMedication.setMedicationCode(medication.getMedicationCode());
-        existingMedication.setMedicationType(medication.getMedicationType());
-        existingMedication.setMedicationStrength(medication.getMedicationStrength());
-        existingMedication.setMedicationDosageForm(medication.getMedicationDosageForm());
-        existingMedication.setMedicIngredientLinks(medication.getMedicIngredientLinks());
+        aexistingMedication.setMedicationName(imedication.getMedicationName());
+        aexistingMedication.setMedicationCode(imedication.getMedicationCode());
+        aexistingMedication.setMedicationType(imedication.getMedicationType());
+        aexistingMedication.setMedicationStrength(imedication.getMedicationStrength());
+        aexistingMedication.setMedicationDosageForm(imedication.getMedicationDosageForm());
+        aexistingMedication.setMedicIngredientLinks(imedication.getMedicIngredientLinks());
 
         // Enregistre la mise à jour
-        MSer.saveorUpdate(existingMedication);
+        MSer.saveorUpdate(aexistingMedication);
 
         return ResponseEntity.ok("Médicament mis à jour avec succès.");
     }
@@ -78,30 +78,30 @@ public class MedicationController {
 
     //Delete
     @DeleteMapping("/delete/{Medication_Ky}")
-    private void deleteMedication(@PathVariable("Medication_Ky")Integer Medication_Ky)
+    private void deleteMedication(@PathVariable("Medication_Ky")Integer iMedication_Ky)
     {
-        MSer.delete(Medication_Ky);
+        MSer.delete(iMedication_Ky);
     }
 
     //show details medication
     @RequestMapping("/search/{Medication_Ky}")
-    private Medication getMedication(@PathVariable(name="Medication_Ky")Integer Medication_Ky)
+    private Medication getMedication(@PathVariable(name="Medication_Ky")Integer iMedication_Ky)
     {
-        return MSer.getmedicationById(Medication_Ky);
+        return MSer.getmedicationById(iMedication_Ky);
     }
     //search par criteria
     @GetMapping("/search")
     public List<Medication> searchMedications(
-            @RequestParam(required = false) String name,
-            @RequestParam(required = false) String code,
-            @RequestParam(required = false) MedicationType type) {
+            @RequestParam(required = false) String iname,
+            @RequestParam(required = false) String icode,
+            @RequestParam(required = false) MedicationType itype) {
 
-        if (name != null) {
-            return MSer.searchByName(name);
-        } else if (code != null) {
-            return MSer.searchByCode(code);
-        } else if (type != null) {
-            return MSer.searchByType(type);
+        if (iname != null) {
+            return MSer.searchByName(iname);
+        } else if (icode != null) {
+            return MSer.searchByCode(icode);
+        } else if (itype != null) {
+            return MSer.searchByType(itype);
         } else {
             return MSer.getMedications();
         }

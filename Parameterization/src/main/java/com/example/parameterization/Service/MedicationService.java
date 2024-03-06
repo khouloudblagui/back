@@ -25,36 +25,36 @@ public class MedicationService {
 
     private final MedicationRepo MRepo;
 
-    public boolean medicationExists(String medicationName, String medicationCode) {
-        return MRepo.existsByMedicationNameOrMedicationCode(medicationName, medicationCode);
+    public boolean medicationExists(String imedicationName, String imedicationCode) {
+        return MRepo.existsByMedicationNameOrMedicationCode(imedicationName, imedicationCode);
     }
 
-    public boolean medicationExistsExcludingId(String medicationName, String medicationCode, Integer medicationId) {
-        return MRepo.existsByMedicationNameOrMedicationCodeAndMedicationKyNot(medicationName, medicationCode, medicationId);
+    public boolean medicationExistsExcludingId(String imedicationName, String imedicationCode, Integer imedicationId) {
+        return MRepo.existsByMedicationNameOrMedicationCodeAndMedicationKyNot(imedicationName, imedicationCode, imedicationId);
     }
 
-    public void saveorUpdate(Medication medications) {
+    public void saveorUpdate(Medication imedications) {
 
-        MRepo.save(medications);
+        MRepo.save(imedications);
     }
 
-    public void delete(Integer Medication_Ky) {
+    public void delete(Integer iMedication_Ky) {
 
-        MRepo.deleteById(Medication_Ky);
+        MRepo.deleteById(iMedication_Ky);
     }
 
-    public Medication getmedicationById(Integer Medication_Ky) {
-        return MRepo.findById(Medication_Ky).get();
+    public Medication getmedicationById(Integer iMedication_Ky) {
+        return MRepo.findById(iMedication_Ky).get();
     }
 
 
-    public static boolean isValidExcelFile(MultipartFile file) {
-        return Objects.equals(file.getContentType(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+    public static boolean isValidExcelFile(MultipartFile ifile) {
+        return Objects.equals(ifile.getContentType(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
     }
 
     // Méthode pour récupérer les médicaments à partir d'un fichier Excel
     public static List<Medication> getMedicationsDataFromExcel(InputStream inputStream) {
-        List<Medication> medications = new ArrayList<>();
+        List<Medication> amedications = new ArrayList<>();
         try {
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
             XSSFSheet sheet = workbook.getSheet("medications");
@@ -66,50 +66,50 @@ public class MedicationService {
                 }
                 Iterator<Cell> cellIterator = row.iterator();
                 int cellIndex = 0;
-                Medication medication = new Medication();
+                Medication amedication = new Medication();
                 while (cellIterator.hasNext()) {
                     Cell cell = cellIterator.next();
                     switch (cellIndex) {
-                        case 1 -> medication.setMedicationCode(cell.getStringCellValue());
-                        case 2 -> medication.setMedicationName(cell.getStringCellValue());
-                        case 3 -> medication.setMedicationType(MedicationType.values()[(int) cell.getNumericCellValue()]);
-                        case 4 -> medication.setMedicationStrength(MedicationStrength.values()[(int) cell.getNumericCellValue()]);
-                        case 5 -> medication.setMedicationDosageForm(DosageForm.values()[(int) cell.getNumericCellValue()]);
+                        case 1 -> amedication.setMedicationCode(cell.getStringCellValue());
+                        case 2 -> amedication.setMedicationName(cell.getStringCellValue());
+                        case 3 -> amedication.setMedicationType(MedicationType.values()[(int) cell.getNumericCellValue()]);
+                        case 4 -> amedication.setMedicationStrength(MedicationStrength.values()[(int) cell.getNumericCellValue()]);
+                        case 5 -> amedication.setMedicationDosageForm(DosageForm.values()[(int) cell.getNumericCellValue()]);
                         default -> {
                         }
                     }
                     cellIndex++;
                 }
-                medications.add(medication);
+                amedications.add(amedication);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return medications;
+        return amedications;
     }
 
     // Méthode pour sauvegarder un fichier de médicaments
-    public void savemedicationfile(MultipartFile file) {
-        if (isValidExcelFile(file)) {
+    public void savemedicationfile(MultipartFile ifile) {
+        if (isValidExcelFile(ifile)) {
             try {
-                List<Medication> medications = getMedicationsDataFromExcel(file.getInputStream());
-                this.MRepo.saveAll(medications);
+                List<Medication> amedications = getMedicationsDataFromExcel(ifile.getInputStream());
+                this.MRepo.saveAll(amedications);
             } catch (IOException e) {
                 throw new IllegalArgumentException("The file is not a valid excel file");
             }
         }
     }
 
-    public List<Medication> searchByName(String name) {
-        return MRepo.findByMedicationNameContaining(name);
+    public List<Medication> searchByName(String iname) {
+        return MRepo.findByMedicationNameContaining(iname);
     }
 
-    public List<Medication> searchByCode(String code) {
-        return MRepo.findByMedicationCode(code);
+    public List<Medication> searchByCode(String icode) {
+        return MRepo.findByMedicationCode(icode);
     }
 
-    public List<Medication> searchByType(MedicationType type) {
-        return MRepo.findByMedicationType(type);
+    public List<Medication> searchByType(MedicationType itype) {
+        return MRepo.findByMedicationType(itype);
     }
         // Méthode pour obtenir tous les médicaments
         public List<Medication> getMedications () {
