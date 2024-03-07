@@ -1,11 +1,12 @@
 eureka:
+  instance:
+    hostname: localhost
+
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-
 server:
   port: 8090
-
 spring:
   application:
     name: careplan
@@ -21,10 +22,6 @@ spring:
       ddl-auto: update
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
-
   servlet:
-    context-path: /careplan
-
-  springdoc:
-    swagger-ui:
-      path: /swagger-ui.html
+    multipart:
+      max-file-size: 10MB
