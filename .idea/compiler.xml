@@ -20,7 +20,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Config-Server" options="-parameters" />
+      <module name="Config-Server" options="" />
       <module name="Discovery" options="-parameters" />
       <module name="Gateway" options="-parameters" />
       <module name="Parameterization" options="-parameters" />

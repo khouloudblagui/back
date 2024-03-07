@@ -1,0 +1,7 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(  è¤úÿÿÿÿ8ÜÂåÖß1
+t	java:S116"SRename this field "Iservice" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«’úÂùÿÿÿÿ8Ü”¨á1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8æÂåÖß1
+C
+java:S1452'"&Remove usage of generic wildcard type.(»ˆƒÌ8íÂåÖß1
