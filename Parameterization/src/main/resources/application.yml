@@ -14,7 +14,7 @@ spring:
     import: optional:configserver:http://localhost:8888
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/careplan
+    url: jdbc:mysql://localhost:3306/careplan?useSSL=false
     username: root
     password: root
   jpa:
@@ -22,6 +22,13 @@ spring:
       ddl-auto: update
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
+
+
   servlet:
     multipart:
-      max-file-size: 10MB
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+
+
