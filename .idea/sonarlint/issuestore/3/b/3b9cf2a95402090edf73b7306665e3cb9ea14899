@@ -1,0 +1,6 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£‰8Ÿå²ß1
+w	java:S116"VRename this field "Irepository" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…©†îøÿÿÿÿ8ŒŸ¨á1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ğå²ß1
+E	java:S108E")Either remove or fill this block of code.(üØô8Œå²ß1
