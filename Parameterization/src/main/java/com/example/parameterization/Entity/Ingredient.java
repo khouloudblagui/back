@@ -1,4 +1,5 @@
 package com.example.parameterization.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,8 +28,11 @@ public class Ingredient {
     @Column(name = "ingredient_desc", nullable = false)
     private String ingredientDesc;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "ing")
     private List<MedicIngredientLink> MedicIngredientLinks;
+
+
 
 }
 
