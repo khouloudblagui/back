@@ -41,7 +41,7 @@ public class Medication {
     private DosageForm medicationDosageForm;
 
     @OneToMany(mappedBy = "med")
-    private List<MedicIngredientLink> MedicIngredientLinks;
+    private List<MedicIngredientLink> medicIngredientLinks;
 
 
 
