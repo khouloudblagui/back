@@ -15,6 +15,7 @@ import java.util.Map;
 public class SurgicalProcedureController {
     @Autowired
     private SurgicalProcedureService Iservice;
+
     @GetMapping
     public List<SurgicalProcedure> getAllProcedures() {
         return Iservice.getAllProcedures();
