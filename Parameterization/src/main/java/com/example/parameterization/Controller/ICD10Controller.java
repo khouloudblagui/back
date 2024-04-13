@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Optional;
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("icd10")
+@RequestMapping("/icd10")
 public class ICD10Controller {
     private final ICD10Service icd10Service;
 
@@ -26,8 +26,6 @@ public class ICD10Controller {
         icd10Service.saveICD10(icd10);
         return ResponseEntity.status(HttpStatus.CREATED).body("ICD10 ajouté avec succès.");
     }
-
-
 
     @PostMapping("add/{iCode}/{iDescription}/{iNotes}")
     public ResponseEntity<String> addICD10(@PathVariable String iCode, @PathVariable String iDescription, @PathVariable String iNotes) {

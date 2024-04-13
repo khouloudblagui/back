@@ -18,9 +18,10 @@ public class ICD10Service {
 
     private final ICD10Repo icd10repository;
 
-    public void saveICD10(ICD10 icd10) {
+    public ICD10 saveICD10(ICD10 icd10) {
         icd10repository.save(icd10);
         System.out.println("ICD10 ajouté avec succès.");
+        return icd10;
     }
 
     public void AddCode(String iCode, String iDescription,String iNotes ) {
