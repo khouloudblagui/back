@@ -5,22 +5,15 @@ import com.example.parameterization.Enum.AllergyType;
 import com.example.parameterization.Enum.Severity;
 import com.example.parameterization.Implementation.AllergyServiceImpl;
 import com.example.parameterization.Repository.AllergyRepo;
-import com.example.parameterization.Service.SymptomService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 

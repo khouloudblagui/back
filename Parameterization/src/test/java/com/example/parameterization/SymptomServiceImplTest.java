@@ -1,8 +1,5 @@
 package com.example.parameterization;
 
-import com.example.parameterization.Entity.Symptoms;
-import com.example.parameterization.Implementation.SymptomServiceImpl;
-import com.example.parameterization.Repository.SymptomRepo;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

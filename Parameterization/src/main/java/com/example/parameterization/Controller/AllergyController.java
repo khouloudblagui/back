@@ -2,7 +2,6 @@ package com.example.parameterization.Controller;
 
 import com.example.parameterization.Entity.Allergy;
 import com.example.parameterization.Service.AllergyService;
-import com.example.parameterization.Service.SymptomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
