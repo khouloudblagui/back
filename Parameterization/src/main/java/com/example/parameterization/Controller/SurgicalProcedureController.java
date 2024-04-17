@@ -18,7 +18,7 @@ import java.util.Map;
 public class SurgicalProcedureController {
     @Autowired
     private SurgicalProcedureService Iservice;
-    
+
     @GetMapping
     public ResponseEntity<List<SurgicalProcedure>> getAllProcedures() {
         List<SurgicalProcedure> procedures = Iservice.getAllProcedures();

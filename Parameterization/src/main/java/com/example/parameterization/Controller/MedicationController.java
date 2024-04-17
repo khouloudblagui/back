@@ -1,16 +1,17 @@
 package com.example.parameterization.Controller;
 
 import com.example.parameterization.Entity.Medication;
-import com.example.parameterization.Enum.MedicationType;
 import com.example.parameterization.Service.MedicationService;
+import com.example.parameterization.dto.MedicationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.http.HttpStatus;
+import com.example.parameterization.Repository.IngredientRepo;
 
 import java.util.List;
 import java.util.Map;
+import java.io.IOException;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -19,60 +20,80 @@ public class MedicationController {
 
     @Autowired
     private MedicationService MSer;
+    private final IngredientRepo ingredientRepo;
 
-
-    //AddUpload
-    @PostMapping("/upload-data")
-    public ResponseEntity<?> uploadMedicationsData(@RequestParam("file") MultipartFile ifile){
-        this.MSer.savemedicationfile(ifile);
-        return ResponseEntity
-                .ok(Map.of("Message" , " Medications data uploaded and saved to database successfully"));
+    public MedicationController(IngredientRepo ingredientRepo) {
+        this.ingredientRepo = ingredientRepo;
     }
+
+    //Upload
+    @PostMapping("/upload-data")
+    public ResponseEntity<?> uploadMedicationsData(@RequestParam("file") MultipartFile ifile) {
+        if (ifile.isEmpty()) {
+            return ResponseEntity.badRequest().body(Map.of("Message" , "Empty file uploaded."));
+        }
+
+        if (!MSer.isValidExcelFile(ifile)) {
+            return ResponseEntity.badRequest().body(Map.of("Message" , "Invalid file format. Please upload a valid Excel file."));
+        }
+
+        try {
+            List<Medication> medications = MSer.getMedicationsDataFromExcel(ifile.getInputStream(), ingredientRepo);
+
+            for (Medication medication : medications) {
+
+                if (MSer.medicationExists(medication.getMedicationName(), medication.getMedicationCode())) {
+                    return ResponseEntity.badRequest().body(Map.of("Message", "Medication '" + medication.getMedicationName() + "' or code '" + medication.getMedicationCode() + "' already exists."));
+                }
+            }
+
+
+            MSer.savemedicationfile(ifile);
+
+            return ResponseEntity.ok(Map.of("Message" , "Medications data uploaded and saved to database successfully"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(Map.of("Message" , "Error processing file."));
+        }
+    }
+
     //GetAll
     @GetMapping
-    public ResponseEntity<List<Medication>> getMedications(){
-        return new ResponseEntity<>(MSer.getMedications(), HttpStatus.FOUND);
+    public List<MedicationResponse> getMedications(){
+        return MSer.getMedicationResponses();
     }
 
     //Add
     @PostMapping(value="/add")
-    public ResponseEntity<String> saveMedication(@RequestBody Medication imedications) {
+    public String saveMedication(@RequestBody Medication imedications) {
         boolean aexists = MSer.medicationExists(imedications.getMedicationName(), imedications.getMedicationCode());
         if (aexists) {
-            return ResponseEntity.badRequest().body("Le médicament existe déjà.");
-        } else {
-            MSer.saveorUpdate(imedications);
-            return ResponseEntity.ok("Médicament ajouté avec succès, ID : " + imedications.getMedicationKy());
+            return "The medication already exist";
         }
+        MSer.saveorUpdate(imedications);
+        return "Medication added successfully, ID : " + imedications.getMedicationKy();
     }
 
     //update
     @PutMapping(value="/edit/{Medication_Ky}")
-    public ResponseEntity<String> updateMedication(@RequestBody Medication imedication, @PathVariable(name="Medication_Ky") Integer iMedication_Ky) {
-        Medication aexistingMedication = MSer.findById(iMedication_Ky);
+    public Medication updateMedication(@RequestBody Medication imedication, @PathVariable(name="Medication_Ky") Integer iMedication_Ky) {
 
-        if (aexistingMedication == null) {
-            return ResponseEntity.notFound().build();
-        }
 
-        // Vérifie si le nom ou le code est modifié en une valeur déjà existante
-        boolean exists = MSer.medicationExistsExcludingId(imedication.getMedicationName(), imedication.getMedicationCode(), iMedication_Ky);
-        if (exists) {
-            return ResponseEntity.badRequest().body("Le médicament existe déjà avec ce nom ou ce code.");
-        }
+        Medication existingMedication = MSer.findById(iMedication_Ky);
 
-        // Met à jour les attributs du médicament existant
-        aexistingMedication.setMedicationName(imedication.getMedicationName());
-        aexistingMedication.setMedicationCode(imedication.getMedicationCode());
-        aexistingMedication.setMedicationType(imedication.getMedicationType());
-        aexistingMedication.setMedicationStrength(imedication.getMedicationStrength());
-        aexistingMedication.setMedicationDosageForm(imedication.getMedicationDosageForm());
-        aexistingMedication.setMedicIngredientLinks(imedication.getMedicIngredientLinks());
+        // Mettre à jour les attributs du médicament existant
+        existingMedication.setMedicationName(imedication.getMedicationName());
+        existingMedication.setMedicationCode(imedication.getMedicationCode());
+        existingMedication.setMedicationType(imedication.getMedicationType());
+        existingMedication.setMedicationStrength(imedication.getMedicationStrength());
+        existingMedication.setMedicationDosageForm(imedication.getMedicationDosageForm());
 
-        // Enregistre la mise à jour
-        MSer.saveorUpdate(aexistingMedication);
+        // Mettre à jour les liens des ingrédients avec le médicament existant
+        MSer.updateIngredientLinks(existingMedication, imedication.getMedicIngredientLinks());
 
-        return ResponseEntity.ok("Médicament mis à jour avec succès.");
+        MSer.saveorUpdate(existingMedication);
+
+        return existingMedication ;
     }
 
 
@@ -83,27 +104,17 @@ public class MedicationController {
         MSer.delete(iMedication_Ky);
     }
 
-    //show details medication
-    @RequestMapping("/search/{Medication_Ky}")
-    private Medication getMedication(@PathVariable(name="Medication_Ky")Integer iMedication_Ky)
+    //search medication
+    @RequestMapping("/search/{medication_name}")
+    private List<MedicationResponse> getMedication(@PathVariable(name="medication_name")String imedication_name)
     {
-        return MSer.getmedicationById(iMedication_Ky);
+        return MSer.searchByName(imedication_name);
     }
-    //search par criteria
-    @GetMapping("/search")
-    public List<Medication> searchMedications(
-            @RequestParam(required = false) String iname,
-            @RequestParam(required = false) String icode,
-            @RequestParam(required = false) MedicationType itype) {
+    //exist
+    @GetMapping("/exists")
+    public boolean checkIfMedicationExists(@RequestParam String medicationName, @RequestParam String medicationCode) {
+        return MSer.medicationExists(medicationName, medicationCode);
+    }
 
-        if (iname != null) {
-            return MSer.searchByName(iname);
-        } else if (icode != null) {
-            return MSer.searchByCode(icode);
-        } else if (itype != null) {
-            return MSer.searchByType(itype);
-        } else {
-            return MSer.getMedications();
-        }
-    }
+
 }

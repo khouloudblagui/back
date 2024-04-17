@@ -8,7 +8,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
@@ -19,9 +18,10 @@ public class ICD10Service {
 
     private final ICD10Repo icd10repository;
 
-    public void saveICD10(ICD10 icd10) {
+    public ICD10 saveICD10(ICD10 icd10) {
         icd10repository.save(icd10);
         System.out.println("ICD10 ajouté avec succès.");
+        return icd10;
     }
 
     public void AddCode(String iCode, String iDescription,String iNotes ) {
@@ -48,6 +48,25 @@ public class ICD10Service {
 
     }
 
+    public void editICD10(String iCode, String newDescription, String newNotes) {
+        // Vérifier si le code ICD10 existe dans la base de données
+        Optional<ICD10> existingICD10 = icd10repository.findICD10ByICD10Code(iCode);
+        if (existingICD10.isPresent()) {
+            // Récupérer l'objet ICD10 existant
+            ICD10 icd10 = existingICD10.get();
+
+            // Mettre à jour les champs nécessaires
+            icd10.setICD10Description(newDescription);
+            icd10.setICD10Notes(newNotes);
+
+            // Sauvegarder les modifications dans la base de données
+            icd10repository.save(icd10);
+
+            System.out.println("ICD10 avec le code " + iCode + " a été mis à jour avec succès.");
+        } else {
+            System.out.println("Aucun ICD10 trouvé avec le code " + iCode + ".");
+        }
+    }
 
     public void deleteICD10(String iCode) {
         Optional<ICD10> icd10 = icd10repository.findICD10ByICD10Code(iCode);
@@ -137,6 +156,12 @@ public class ICD10Service {
         }
     }
 
+
+
+    //chercher le code dans la base
+    public Optional<ICD10> getIcd10ByCode(String icd10Code) {
+        return icd10repository.findICD10ByICD10Code(icd10Code);
+    }
 
     public List<ICD10> getICD10Codes() {
         return icd10repository.findAll();
