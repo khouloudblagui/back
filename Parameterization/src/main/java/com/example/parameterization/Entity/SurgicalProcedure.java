@@ -14,6 +14,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Table(name = "SurgicalProcedure")
+
 public class SurgicalProcedure implements Serializable {
     
     @Id

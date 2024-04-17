@@ -19,13 +19,21 @@ import java.util.*;
 public class SurgicalProcedureService {
     @Autowired
      SurgicalProcedureRepository Irepository;
-     public List<SurgicalProcedure> getAllProcedures(){
-         return Irepository.findAll();
-     }
-     public SurgicalProcedure addProcedure(SurgicalProcedure procedure){
+
+    /* public SurgicalProcedure addProcedure(SurgicalProcedure procedure){
          return Irepository.save(procedure);
-     }
-     public SurgicalProcedure updateProcedure(long cptky,SurgicalProcedure procedure){
+     }*/
+    public SurgicalProcedure addProcedure(SurgicalProcedure procedure) {
+        // Check if a procedure with the same cptCode already exists
+        if (Irepository.existsBycptCode(procedure.getCptCode())) {
+            throw new IllegalArgumentException("Surgical procedure with this CPT code already exists");
+        }
+
+        // If no duplicate found, save the procedure
+        return Irepository.save(procedure);
+    }
+
+    public SurgicalProcedure updateProcedure(long cptky,SurgicalProcedure procedure){
          if (!Irepository.existsById(cptky)){
              throw new NotFoundException("Procedure not found with id : " + cptky);
      }
@@ -37,12 +45,20 @@ public class SurgicalProcedureService {
                throw new NotFoundException("procedure not found with id : " + cptky);
 
            }
-           Irepository.deleteAllById(cptky);
+           Irepository.deleteById(cptky);
          }
-
-         public SurgicalProcedure getProcedureById(long cptky){
+         public List<SurgicalProcedure> getAllProcedures(){
+        return Irepository.findAll();
+    }
+        /* public SurgicalProcedure getProcedureById(long cptky){
          return Irepository.findById(cptky).orElseThrow(() -> new NotFoundException("Procedure Not found with id : " + cptky));
-         }
+         }*/
+        public SurgicalProcedure getProcedureByCptCode(String cptCode) {
+            // Ensure that the repository method exists and works as expected
+            return Irepository.findBycptCode(cptCode)
+                    .orElseThrow(() -> new NotFoundException("Procedure not found with CPT Code: " + cptCode));
+        }
+
     public static boolean isValidExcelFile(MultipartFile file){
         return Objects.equals(file.getContentType(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" );
     }
@@ -99,4 +115,34 @@ public class SurgicalProcedureService {
         }
     }
 
+
+
+
+
+    public boolean existsBycptCode(String cptCode) {
+        return Irepository.existsBycptCode(cptCode);
+    }
+
+    public SurgicalProcedure getProcedureBycptCode(String cptCode) {
+        return Irepository.getProcedureBycptCode(cptCode);
+    }
+    public void editsurgicalProcedure(String cptCode, String newDescription, String newcategory) {
+        // Vérifier si le code surgicalProcedure existe dans la base de données
+        Optional<SurgicalProcedure> existingsurgicalProcedure = Irepository.findBycptCode(cptCode);
+        if (existingsurgicalProcedure.isPresent()) {
+            // Récupérer l'objet surgicalProcedure existant
+            SurgicalProcedure surgicalProcedure = existingsurgicalProcedure.get();
+
+            // Mettre à jour les champs nécessaires
+            surgicalProcedure.setCptDesc(newDescription);
+            surgicalProcedure.setCptCategory(newcategory);
+
+            // Sauvegarder les modifications dans la base de données
+            Irepository.save(surgicalProcedure);
+
+            System.out.println("surgicalProcedure avec le code " + cptCode + " a été mis à jour avec succès.");
+        } else {
+            System.out.println("Aucun surgicalProcedure trouvé avec le code " + cptCode + ".");
+        }
+    }
 }
