@@ -1,14 +1,0 @@
-
-f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¼ù°
-k	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖÖ³éúÿÿÿÿ
-k	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Õ¢¬ûÿÿÿÿ
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(  è¤úÿÿÿÿ
-d	java:S116"ORename this field "Iser" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÐ³¥
-X
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ
-5
-java:S3751"Make this method non "private".(•¼ù°
-:
-java:S3751""Make this method non "private".(ÖÖ³éúÿÿÿÿ
-:
-java:S3751)"Make this method non "private".(÷Õ¢¬ûÿÿÿÿ

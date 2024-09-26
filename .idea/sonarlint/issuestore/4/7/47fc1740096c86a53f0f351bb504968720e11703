@@ -1,0 +1,17 @@
+
+Z
+java:S18542"=Remove this useless assignment to local variable "saveUsers".(€íÂ¦8â¯Ü¢2
+Z
+java:S1854."8Remove this useless assignment to local variable "user".(ŸÉ¿òıÿÿÿÿ8•ıÁò¢2
+P
+java:S1481,".Remove this unused "savedUser" local variable.(ğñ§Ñøÿÿÿÿ8è¯Ü¢2
+R
+java:S2209/"5Change this instance-reference to a static reference.(Øº…Ü8ªıÁò¢2
+I
+java:S1905/",Remove this unnecessary cast to "doctorDto".(Øº…Ü8¬ıÁò¢2
+K
+java:S14812".Remove this unused "saveUsers" local variable.(€íÂ¦8ë¯Ü¢2
+P
+java:S1172=".Remove this unused method parameter "request".(„‚÷üÿÿÿÿ8®ùÇò¢2
+o
+java:S6204{"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ÊıÁò¢2

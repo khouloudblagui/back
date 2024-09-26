@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../careplan-backend.iml" filepath="$PROJECT_DIR$/../careplan-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/careplan-backend.iml" filepath="$PROJECT_DIR$/.idea/careplan-backend.iml" />
     </modules>
   </component>
 </project>

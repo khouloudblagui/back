@@ -1,0 +1,13 @@
+
+U
+java:S1854;"8Remove this useless assignment to local variable "user".(Â‹¢ß8î¥çò¢2
+I
+java:S14819".Remove this unused "savedUser" local variable.(ğñ§Ñøÿÿÿÿ
+T
+java:S1854š"=Remove this useless assignment to local variable "savedUser".(šÉÅØ
+J
+java:S1481".Remove this unused "savedUser" local variable.(ğñ§Ñøÿÿÿÿ
+M
+java:S6437”"6Revoke and change this password, as it is compromised.(Æ†±Å
+O
+java:S1905š"1Remove this unnecessary cast to "Administrateur".(šÉÅØ8€§çò¢2
