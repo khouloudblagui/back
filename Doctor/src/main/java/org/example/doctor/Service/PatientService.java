@@ -1,6 +1,8 @@
 package org.example.doctor.Service;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.example.doctor.Entity.Patient;
+import org.example.doctor.Exception.PatientNotFoundException;
 import org.example.doctor.Repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +28,9 @@ public class PatientService {
     // Trouver un patient par son ID
     public Patient getPatientById(Long patientId) {
         return patientRepository.findById(patientId)
-                .orElseThrow(() -> new RuntimeException("Patient not found with ID: " + patientId));
+                .orElseThrow(() -> new EntityNotFoundException("Patient not found with ID: " + patientId));
     }
+
 
     // Trouver un patient par son email
     public Optional<Patient> getPatientByEmail(String email) {

@@ -1,6 +1,8 @@
 package org.example.doctor.Controller;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.example.doctor.Entity.Patient;
+import org.example.doctor.Exception.PatientNotFoundException;
 import org.example.doctor.Service.PatientService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,11 +29,21 @@ public class PatientController {
     }
 
     // Récupérer un patient par son ID
-    @GetMapping("/{patientId}")
-    public ResponseEntity<Patient> getPatientById(@PathVariable Long patientId) {
-        Patient patient = patientService.getPatientById(patientId);
+    @GetMapping("/{id}")
+    public ResponseEntity<Patient> getPatientById(@PathVariable Long id) {
+        Patient patient = patientService.getPatientById(id);
         return new ResponseEntity<>(patient, HttpStatus.OK);
     }
+
+    @ExceptionHandler(PatientNotFoundException.class)
+    public ResponseEntity<String> handlePatientNotFound(PatientNotFoundException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<String> handleEntityNotFound(EntityNotFoundException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
 
     // Récupérer un patient par son email
     @GetMapping("/email")
