@@ -1,0 +1,5 @@
+
+”
+java:S11302"xRemove the declaration of thrown exception 'jakarta.mail.MessagingException', as it cannot be thrown from method's body.(×¦¶8óÃÌþ¢2
+™
+java:S11302"}Remove the declaration of thrown exception 'java.io.UnsupportedEncodingException', as it cannot be thrown from method's body.(×¦¶8ôÃÌþ¢2
