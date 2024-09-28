@@ -1,0 +1,20 @@
+
+c
+java:S1192!"HDefine a constant instead of duplicating this literal "Message" 5 times.(ùêˆÛıÿÿÿÿ
+k	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞÔÖÓúÿÿÿÿ
+f	java:S117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¾ï€
+k	java:S117m"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êæ¨¢üÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(  è¤úÿÿÿÿ
+d	java:S116"ORename this field "MSer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Ò±
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+<
+java:S1452"&Remove usage of generic wildcard type.(õó§–
+K
+java:S2209$"5Change this instance-reference to a static reference.(ñÎÕâ
+P
+java:S2209)"5Change this instance-reference to a static reference.(üÍÒÍÿÿÿÿÿ
+5
+java:S3751f"Make this method non "private".(Œ¾ï€
+:
+java:S3751m"Make this method non "private".(Êæ¨¢üÿÿÿÿ
