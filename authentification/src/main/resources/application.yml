@@ -18,7 +18,17 @@ spring:
       file-size-threshold: 2KB
       max-file-size: 200MB
       max-request-size: 215MB
-
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: khouloudblagui61@gmail.com
+    password: kuvp wehr rmol hcpn
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
   config:
     import: optional:configserver:http://localhost:8888
 
@@ -31,17 +41,7 @@ application:
         expiration: 604800000
 
 
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: khouloudblagui61@gmail.com
-    password: kuvp wehr rmol hcpn
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
+
 
 
 eureka:

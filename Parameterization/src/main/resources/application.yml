@@ -9,14 +9,14 @@ server:
   port: 8090
 spring:
   application:
-    name: careplan
+    name: parameterization-service
   config:
     import: optional:configserver:http://localhost:8888
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/careplan?useSSL=false
+    url: jdbc:mysql://localhost:3306/parameterization?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
-    password: root
+    password:
   jpa:
     hibernate:
       ddl-auto: update

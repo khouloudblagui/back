@@ -13,6 +13,7 @@
         <module name="Discovery" />
         <module name="Doctor" />
         <module name="Parameterization" />
+        <module name="Admin" />
         <module name="Config-Server" />
       </profile>
     </annotationProcessing>
@@ -22,6 +23,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Admin" options="-parameters" />
       <module name="Config-Server" options="-parameters" />
       <module name="Discovery" options="-parameters" />
       <module name="Doctor" options="-parameters" />

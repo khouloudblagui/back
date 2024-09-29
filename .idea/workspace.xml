@@ -5,61 +5,86 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35179449-a93d-482b-8283-dcb6b4662bee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3d0ba518c5f32b3163e3d9187471b0472f3ae0f7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c2b270bf4ef5f6d79789bbb8cac695ee6d1a60d0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cf98c5e2470b8e06708ea7f93280a94a06147f01" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d13e19bccfba161c38ed633ec397bd427bdbb28c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/2/c2b270bf4ef5f6d79789bbb8cac695ee6d1a60d0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/f/cf98c5e2470b8e06708ea7f93280a94a06147f01" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/1/d13e19bccfba161c38ed633ec397bd427bdbb28c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/Exception/PatientNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patient.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patient/patient.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patient/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/PatientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/DTO/PatientDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Feign/DoctorClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/PatientServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/PatientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patient/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/12386939326f8e0c32e66d5511dcec0d504474a0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/13a83e901f3f7ad0fdba8819f918fa6bfba6ac89" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/295e8ff44980781ca08b638d70f74244fa0b8e4e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3fe3dfb17f1180817e935a86e1f0c89531a26074" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/4024d89d47ba19d9e9481b64380fea176ba7a6ab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/6/76ff3b9cc0a62866b15696642610df1148acfea8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8cee7903972f892188f9b43e6a52a90e591da7db" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8cee7903972f892188f9b43e6a52a90e591da7db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/f/8fcbf027957a2e7a8f350b395a25681309593aa5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aa9208ab7f04404e3d33eb042139c58774941126" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e282a66efbcf94ae828ea7e789853ca6e8ac335e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f17a28cd25a1ab95b2629bd479de4a2573f3ef5a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fb26b85fcb838f634826ce03cd2b612da53407a2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/06064fc1b9ad1e4e7c6a531922904998ab888934" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/06064fc1b9ad1e4e7c6a531922904998ab888934" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3d0ba518c5f32b3163e3d9187471b0472f3ae0f7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aa0668477822f753c11b076dd6296cbe8179d53a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cf98c5e2470b8e06708ea7f93280a94a06147f01" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/2/12386939326f8e0c32e66d5511dcec0d504474a0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/3/13a83e901f3f7ad0fdba8819f918fa6bfba6ac89" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/9/295e8ff44980781ca08b638d70f74244fa0b8e4e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/f/3fe3dfb17f1180817e935a86e1f0c89531a26074" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/0/4024d89d47ba19d9e9481b64380fea176ba7a6ab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/6/76ff3b9cc0a62866b15696642610df1148acfea8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/f/8fcbf027957a2e7a8f350b395a25681309593aa5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/a/aa9208ab7f04404e3d33eb042139c58774941126" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/2/e282a66efbcf94ae828ea7e789853ca6e8ac335e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/1/f17a28cd25a1ab95b2629bd479de4a2573f3ef5a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/b/fb26b85fcb838f634826ce03cd2b612da53407a2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/a/aa0668477822f753c11b076dd6296cbe8179d53a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/f/cf98c5e2470b8e06708ea7f93280a94a06147f01" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.skyenet/usage/log.csv.1727390980922" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.skyenet/usage/log.csv.1727394580933" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/Controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/Controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/DoctorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/DoctorApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/Service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/Service/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/target/classes/org/example/doctor/Controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/target/classes/org/example/doctor/Controller/PatientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/target/classes/org/example/doctor/DoctorApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/target/classes/org/example/doctor/DoctorApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.skyenet/usage/log.csv.1727432213798" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.skyenet/usage/log.csv.1727432213802" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/AdminAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/AdminAppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/AdminDoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/AdminDoctorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/AdminPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/AdminPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/MedicalStaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/MedicalStaffController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/OperationRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/OperationRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/SurgeryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/SurgeryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/DTO/AppointmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/DTO/AppointmentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/DTO/DoctorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/DTO/DoctorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/DTO/PatientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/DTO/PatientDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Entity/MedicalStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Entity/MedicalStaff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Entity/OperationRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Entity/OperationRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Entity/Surgery.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Entity/Surgery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Feign/DoctorServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Feign/DoctorServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Repository/MedicalStaffRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Repository/MedicalStaffRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Repository/OperationRoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Repository/OperationRoomRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Repository/SurgeryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Repository/SurgeryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/AppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/DoctorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/DoctorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/MedicalStaffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/MedicalStaffService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/OperationRoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/OperationRoomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/PatientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/SurgeryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/SurgeryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/org/example/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/Controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/Controller/AppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/Service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/src/main/java/org/example/doctor/Service/AppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/target/classes/org/example/doctor/Controller/AppointmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/target/classes/org/example/doctor/Controller/AppointmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/target/classes/org/example/doctor/Service/AppointmentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/target/classes/org/example/doctor/Service/AppointmentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parameterization/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Parameterization/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parameterization/src/main/java/com/example/parameterization/ParameterizationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parameterization/src/main/java/com/example/parameterization/ParameterizationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parameterization/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Parameterization/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/AllergyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/AllergyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/HealthMonitoringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/HealthMonitoringController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/MedicalRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/MedicalRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/MedicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/MedicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/PatientAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/PatientAppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/PatienttController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Controller/PatienttController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/DTO/AllergyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/DTO/AllergyDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/DTO/AppointmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/DTO/AppointmentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/DTO/MedicationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/DTO/MedicationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Entity/HealthMonitoring.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Entity/HealthMonitoring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Entity/MedicalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Entity/MedicalRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Enum/IndicatorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Enum/IndicatorType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Exception/MedicalRecordNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Exception/MedicalRecordNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Exception/MedicationRetrievalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Exception/MedicationRetrievalException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Feign/DoctorClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Feign/DoctorClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Feign/ParameterizationClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Feign/ParameterizationClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/PatientServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/PatientServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Repository/HealthMonitoringRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Repository/HealthMonitoringRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Repository/MedicalRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Repository/MedicalRecordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/AllergyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/AllergyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/AppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/HealthMonitoringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/HealthMonitoringService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/MedicalRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/MedicalRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/MedicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/src/main/java/org/example/Service/MedicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/target/classes/org/example/Controller/PatientController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/target/classes/org/example/Feign/DoctorClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/target/classes/org/example/Feign/DoctorClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/target/classes/org/example/PatientServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/target/classes/org/example/PatientServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentification/src/main/java/org/example/authentification/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentification/src/main/java/org/example/authentification/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentification/src/main/java/org/example/authentification/config/OpenApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentification/src/main/java/org/example/authentification/config/OpenApiConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentification/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authentification/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,13 +128,13 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.PatientServiceApplication">
-    <configuration name="DiscoveryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.discovery.DiscoveryApplication" />
-      <module name="Discovery" />
+  <component name="RunManager" selected="Application.authentificationApplication">
+    <configuration name="AdminApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.AdminApplication" />
+      <module name="Admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.discovery.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,12 +142,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DoctorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.DoctorApplication" />
-      <module name="Doctor" />
+    <configuration name="ParameterizationApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.parameterization.ParameterizationApplication" />
+      <module name="Parameterization" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="com.example.parameterization.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -171,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PatientServiceApplication" />
-        <item itemvalue="Application.org.example.doctor.DoctorApplication" />
         <item itemvalue="Application.authentificationApplication" />
-        <item itemvalue="Application.DiscoveryApplication" />
-        <item itemvalue="Application.DoctorApplication" />
+        <item itemvalue="Application.AdminApplication" />
+        <item itemvalue="Application.PatientServiceApplication" />
+        <item itemvalue="Application.ParameterizationApplication" />
+        <item itemvalue="Application.org.example.doctor.DoctorApplication" />
       </list>
     </recent_temporary>
   </component>

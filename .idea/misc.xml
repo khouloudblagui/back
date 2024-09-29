@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/authentification/pom.xml" />
         <option value="$PROJECT_DIR$/Doctor/Patient/pom.xml" />
         <option value="$PROJECT_DIR$/Patient/pom.xml" />
+        <option value="$PROJECT_DIR$/Admin/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

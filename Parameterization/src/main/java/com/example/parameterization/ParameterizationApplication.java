@@ -3,6 +3,7 @@ package com.example.parameterization;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.apache.catalina.filters.CorsFilter;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +16,7 @@ import java.util.Arrays;
 
 @EnableDiscoveryClient
 @SpringBootApplication
+@EnableFeignClients
 public class ParameterizationApplication {
 
     public static void main(String[] args) {
