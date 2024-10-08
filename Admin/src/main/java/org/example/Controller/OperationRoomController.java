@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admin/operation-rooms")
+@CrossOrigin(origins = "http://localhost:4200")
 public class OperationRoomController {
 
     @Autowired
@@ -37,4 +38,20 @@ public class OperationRoomController {
         operationRoomService.deleteOperationRoom(id);
         return ResponseEntity.noContent().build();
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<OperationRoom> updateOperationRoom(@PathVariable Long id, @RequestBody OperationRoom roomDetails) {
+        return operationRoomService.getOperationRoomById(id)
+                .map(existingRoom -> {
+                    existingRoom.setPatientName(roomDetails.getPatientName());
+                    existingRoom.setRoomNumber(roomDetails.getRoomNumber());
+                    existingRoom.setRoomType(roomDetails.getRoomType());
+                    existingRoom.setGender(roomDetails.getGender());
+                    existingRoom.setAdmitDate(roomDetails.getAdmitDate());
+                    existingRoom.setDischargeDate(roomDetails.getDischargeDate());
+                    existingRoom.setStatus(roomDetails.getStatus());
+                    return ResponseEntity.ok(operationRoomService.saveOperationRoom(existingRoom));
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
 }

@@ -32,7 +32,10 @@ public class AppointmentService {
     // Mettre à jour un rendez-vous existant
     public Appointment updateAppointment(Long appointmentId, Appointment updatedAppointment) {
         Appointment existingAppointment = getAppointmentById(appointmentId);
-        existingAppointment.setAppointmentDate(updatedAppointment.getAppointmentDate());
+        existingAppointment.setDate(updatedAppointment.getDate());
+        existingAppointment.setTime(updatedAppointment.getTime());
+        existingAppointment.setDoctor(updatedAppointment.getDoctor());
+        existingAppointment.setPatient(updatedAppointment.getPatient());
         existingAppointment.setStatus(updatedAppointment.getStatus());
         return appointmentRepository.save(existingAppointment);
     }
@@ -41,6 +44,12 @@ public class AppointmentService {
     public void deleteAppointment(Long appointmentId) {
         appointmentRepository.deleteById(appointmentId);
     }
+
+    // Récupérer tous les rendez-vous
+    public List<Appointment> getAllAppointments() {
+        return appointmentRepository.findAll();
+    }
+
 
     // Récupérer tous les rendez-vous d'un docteur
     public List<Appointment> getAppointmentsByDoctor(Long doctorId) {

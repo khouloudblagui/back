@@ -1,4 +1,5 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÂ†·şÿÿÿÿ
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¿ä·‚£2
+|
+java:S1192#"ZDefine a constant instead of duplicating this literal "Doctor not found with id " 3 times.(÷ñÙØüÿÿÿÿ8‡î¥2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÂ†·şÿÿÿÿ8Ú÷î¥2
+]	java:S125]"<This block of commented-out lines of code should be removed.(Í¶¤µşÿÿÿÿ8à÷î¥2

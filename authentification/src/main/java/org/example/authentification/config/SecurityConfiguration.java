@@ -12,16 +12,68 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
-
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-@EnableMethodSecurity
+@EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration {
 
+    // Liste blanche pour permettre un accès libre à certaines URL
     private static final String[] WHITE_LIST_URL = {
+            "/api/v1/auth/**",
+            "/api/v1/verify/**",
+            "/v2/api-docs",
+            "/v3/api-docs",
+            "/v3/api-docs/**",
+            "/swagger-resources",
+            "/swagger-resources/**",
+            "/configuration/ui",
+            "/configuration/security",
+            "/swagger-ui/**",
+            "/webjars/**",
+            "/swagger-ui.html"
+    };
+
+    // Injecte les composants nécessaires pour l'authentification
+    private final JwtAuthenticationFilter jwtAuthFilter;
+    private final AuthenticationProvider authenticationProvider;
+    private final LogoutHandler logoutHandler;
+
+    // Bean pour la configuration du filtre de sécurité
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(req -> req
+                        // URL accessibles sans authentification
+                        .requestMatchers(WHITE_LIST_URL).permitAll()
+                        // Autorisation par rôles spécifiques
+                        .requestMatchers("/api/v1/doctors/**").hasAnyRole("ADMIN", "DOCTOR") // Accessible aux rôles ADMIN et DOCTOR
+                        .requestMatchers("/api/v1/patient/**").hasAnyRole("DOCTOR", "PATIENT") // Accessible aux rôles DOCTOR et PATIENT
+                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN") // Accessible uniquement au rôle ADMIN
+                        .anyRequest().authenticated() // Toute autre requête nécessite une authentification
+                )
+                .cors().and()
+                .sessionManagement(session -> session.sessionCreationPolicy(STATELESS)) // Pas de session maintenue sur le serveur
+                .authenticationProvider(authenticationProvider) // Utilise le provider d'authentification personnalisé
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class) // Ajoute le filtre d'authentification JWT
+                .logout(logout -> logout
+                        .logoutUrl("/api/v1/auth/logout")
+                        .addLogoutHandler(logoutHandler)
+                        .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext())
+                );
+
+        return http.build();
+    }
+
+
+
+
+
+
+   /* private static final String[] WHITE_LIST_URL = {
             "/api/v1/auth/**",
             "/api/v1/verify/**",
             "/v2/api-docs",
@@ -45,12 +97,24 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(req ->
                         req.requestMatchers(WHITE_LIST_URL)
                                 .permitAll()
-                                /* .requestMatchers("/api/v1/management/**").hasAnyRole(ADMIN.name(), MANAGER.name())
-                               /* .requestMatchers(GET, "/api/v1/management/**").hasAnyAuthority(ADMIN_READ.name(), MANAGER_READ.name())
-                                .requestMatchers(POST, "/api/v1/management/**").hasAnyAuthority(ADMIN_CREATE.name(), MANAGER_CREATE.name())
-                                .requestMatchers(PUT, "/api/v1/management/**").hasAnyAuthority(ADMIN_UPDATE.name(), MANAGER_UPDATE.name())
-                                .requestMatchers(DELETE, "/api/v1/management/**").hasAnyAuthority(ADMIN_DELETE.name(), MANAGER_DELETE.name())*/
-                                .anyRequest()
+                                /* .requestMatchers("/api/v1/doctors/**").hasAnyRole(Admin.name(), Doctor.name())
+                                .requestMatchers(GET, "/api/v1/doctors/**").hasAnyAuthority(Admin_READ.name(), Doctor_READ.name())
+                                .requestMatchers(POST, "/api/v1/doctors/**").hasAnyAuthority(Admin_CREATE.name(), Doctor_CREATE.name())
+                                .requestMatchers(PUT, "/api/v1/doctors/**").hasAnyAuthority(Admin_UPDATE.name(), Doctor_UPDATE.name())
+                                .requestMatchers(DELETE, "/api/v1/doctors/**").hasAnyAuthority(Admin_DELETE.name(), Doctor_DELETE.name())
+
+                                .requestMatchers("/api/v1/patient/**").hasAnyRole(Doctor.name(), Patient.name())
+                                .requestMatchers(GET, "/api/v1/patient/**").hasAnyAuthority(Doctor_READ.name(), Patient_READ.name())
+                                .requestMatchers(POST, "/api/v1/patient/**").hasAnyAuthority(Doctor_CREATE.name(), Patient_CREATE.name())
+                                .requestMatchers(PUT, "/api/v1/patient/**").hasAnyAuthority(Doctor_UPDATE.name(), Patient_UPDATE.name())
+                                .requestMatchers(DELETE, "/api/v1/patient/**").hasAnyAuthority(Doctor_DELETE.name(), Patient_DELETE.name())
+
+                                .requestMatchers("/api/v1/admin/**").hasRole(Admin.name())
+                                .requestMatchers(GET, "/api/v1/admin/**").hasAuthority(Admin_READ.name())
+                                .requestMatchers(POST, "/api/v1/admin/**").hasAuthority(Admin_CREATE.name())
+                                .requestMatchers(PUT, "/api/v1/admin/**").hasAuthority(Admin_UPDATE.name())
+                                .requestMatchers(DELETE, "/api/v1/admin/**").hasAuthority(Admin_DELETE.name()*/
+                             /*   .anyRequest()
                                 .authenticated()
                 )
                 .cors().and()
@@ -65,4 +129,5 @@ public class SecurityConfiguration {
         ;
 
         return http.build();
-    }}
+    }*/
+}

@@ -1,5 +1,3 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ü‰¨ê
-M
-java:S1128
-"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8·Í·„£2
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ü‰¨ê8²ß¾Ê¥2
+X	java:S1257"<This block of commented-out lines of code should be removed.(»ßõ«8û¯¾Ê¥2

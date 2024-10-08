@@ -22,14 +22,31 @@ public class Patient {
     @Column(name = "patient_id", nullable = false)
     private Long id;
 
-    @Column(name = "firstName")
-    private String firstName;
+    private Long userId; // Référence à l'utilisateur dans le microservice Authentification
 
-    @Column(name = "lastName")
-    private String lastName;
+    @Transient
+    private String name; // Récupéré via Authentification, non persisté
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
+
+    @Transient
+    private String mobile;
+
+    @Column(name = "gender", nullable = false)
+    private String gender;
+
+    @Column(name = "bGroup")
+    private String bGroup;
+
+    @Column(name = "date")
+    private String date;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "treatment")
+    private String treatment;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Appointment> appointments = new HashSet<>();

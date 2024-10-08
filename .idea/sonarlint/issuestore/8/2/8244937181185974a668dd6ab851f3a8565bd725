@@ -1,2 +1,4 @@
 
 b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ëøÈÊ
+{
+java:S3252"YUse static access with "org.example.authentification.auth.RegisterRequest" for "builder".(†«ßüÿÿÿÿ8ÈıÁÊ¥2

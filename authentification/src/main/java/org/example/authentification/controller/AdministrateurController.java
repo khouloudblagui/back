@@ -65,12 +65,7 @@ public class AdministrateurController {
         List<UserDto> users = administrateurService.getAllUsersExceptAdmin();
         return ResponseEntity.ok(users);
     }
-    /*@PreAuthorize("hasAuthority('ADMIN')")
-    @PutMapping("/updateuser")
-    public ResponseEntity<Response> updateUser(@RequestBody User user) {
-        Response response = administrateurService.updateUser(UserDto.fromEntity(user));
-        return ResponseEntity.ok(response);
-    }*/
+
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/users/{Id}")
     public ResponseEntity<User> getUserById(@PathVariable Long userId) {

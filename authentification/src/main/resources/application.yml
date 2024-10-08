@@ -2,6 +2,8 @@ server:
   port: 8083
 
 spring:
+  application:
+    name: auth-service
   datasource:
     url: jdbc:mysql://localhost:3306/databaseauth?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
@@ -39,10 +41,6 @@ application:
       expiration: 86400000
       refresh-token:
         expiration: 604800000
-
-
-
-
 
 eureka:
   instance:
