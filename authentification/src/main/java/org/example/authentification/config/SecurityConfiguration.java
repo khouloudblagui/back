@@ -50,8 +50,8 @@ public class SecurityConfiguration {
                         // URL accessibles sans authentification
                         .requestMatchers(WHITE_LIST_URL).permitAll()
                         // Autorisation par rôles spécifiques
-                        .requestMatchers("/api/v1/doctors/**").hasAnyRole("ADMIN", "DOCTOR") // Accessible aux rôles ADMIN et DOCTOR
-                        .requestMatchers("/api/v1/patient/**").hasAnyRole("DOCTOR", "PATIENT") // Accessible aux rôles DOCTOR et PATIENT
+                        .requestMatchers("/doctors/****").hasAnyRole("ADMIN", "DOCTOR") // Accessible aux rôles ADMIN et DOCTOR
+                        .requestMatchers("/patients/**").hasAnyRole("DOCTOR", "PATIENT") // Accessible aux rôles DOCTOR et PATIENT
                         .requestMatchers("/api/v1/admin/**").hasRole("ADMIN") // Accessible uniquement au rôle ADMIN
                         .anyRequest().authenticated() // Toute autre requête nécessite une authentification
                 )
