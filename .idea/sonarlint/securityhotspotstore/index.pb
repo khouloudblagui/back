@@ -349,3 +349,11 @@ e
 Vauthentification/src/main/java/org/example/authentification/token/TokenRepository.java,0\5\056cd5e9a163797df6c8fe969f4064e7e7920f2c
 €
 Pauthentification/src/main/java/org/example/authentification/token/TokenType.java,2\8\28f01fb96157dcece4b4b891f6c07bb59aa32edf
+q
+AGateway/src/main/java/com/example/gateway/GatewayApplication.java,c\0\c08a3f4236adbc908ec3169d74c7eb556565e992
+{
+KDoctor/src/main/java/org/example/doctor/config/JwtAuthenticationFilter.java,7\9\7908ca68c2e033e00cc0f2e00361bbd2dd578229
+r
+BDoctor/src/main/java/org/example/doctor/config/SecurityConfig.java,d\a\da77387178a325f08f86d1767f49fed029f7031c
+’
+bauthentification/src/main/java/org/example/authentification/config/SimpleGrantedAuthorityImpl.java,c\3\c390539ca1bdb48674da2d7c1d20bf691a946c35

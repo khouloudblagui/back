@@ -50,14 +50,14 @@ public class SecurityConfiguration {
                         // URL accessibles sans authentification
                         .requestMatchers(WHITE_LIST_URL).permitAll()
                         // Autorisation par rôles spécifiques
-                        .requestMatchers("/doctors/****").hasAnyRole("ADMIN", "DOCTOR") // Accessible aux rôles ADMIN et DOCTOR
-                        .requestMatchers("/patients/**").hasAnyRole("DOCTOR", "PATIENT") // Accessible aux rôles DOCTOR et PATIENT
-                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN") // Accessible uniquement au rôle ADMIN
-                        .anyRequest().authenticated() // Toute autre requête nécessite une authentification
+                      // .requestMatchers("/doctors/**").hasAnyRole("ADMIN", "DOCTOR") // Accessible aux rôles ADMIN et DOCTOR
+                       //.requestMatchers("/patients/**").hasAnyRole("DOCTOR", "PATIENT") // Accessible aux rôles DOCTOR et PATIENT
+                        //.requestMatchers("/api/v1/admin/**").hasAuthority("ROLE_ADMIN") // Accessible uniquement au rôle ADMIN
+                        .anyRequest().authenticated()
                 )
                 .cors().and()
                 .sessionManagement(session -> session.sessionCreationPolicy(STATELESS)) // Pas de session maintenue sur le serveur
-                .authenticationProvider(authenticationProvider) // Utilise le provider d'authentification personnalisé
+                .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class) // Ajoute le filtre d'authentification JWT
                 .logout(logout -> logout
                         .logoutUrl("/api/v1/auth/logout")

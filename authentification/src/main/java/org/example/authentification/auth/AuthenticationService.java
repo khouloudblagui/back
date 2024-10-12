@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.authentification.config.JwtService;
 import org.example.authentification.dto.PatientDto;
 import org.example.authentification.dto.Response;
+import org.example.authentification.dto.UserDto;
 import org.example.authentification.entites.Administrateur;
 import org.example.authentification.entites.Patient;
 import org.example.authentification.entites.Role;
@@ -154,6 +155,35 @@ public class AuthenticationService {
       savedUser = repository.save((Administrateur) user);
     }
 
+  }
+
+  public boolean validateToken(String token) {
+    try {
+      // Extraire l'email ou le nom d'utilisateur à partir du token
+      String username = jwtService.extractUsername(token);
+
+      // Vérifier si l'utilisateur existe dans la base de données
+      var user = repository.findByEmail(username)
+              .orElseThrow(() -> new IllegalStateException("User not found"));
+
+      // Vérifier si le token est valide
+      return jwtService.isTokenValid(token, user);
+    } catch (Exception e) {
+      // Si une exception est levée, retourner false
+      return false;
+    }
+  }
+
+  public UserDto getUserByToken(String token) {
+    // Extraire l'email à partir du token
+    String username = jwtService.extractUsername(token);
+
+    // Récupérer l'utilisateur à partir de la base de données
+    User user = repository.findByEmail(username)
+            .orElseThrow(() -> new IllegalArgumentException("User not found"));
+
+    // Retourner les informations utilisateur sous forme de DTO
+    return UserDto.fromEntity(user);
   }
 
 

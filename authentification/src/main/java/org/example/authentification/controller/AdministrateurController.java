@@ -18,13 +18,13 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/admin")
 @RequiredArgsConstructor
-@PreAuthorize("hasRole('ADMIN')")
+//@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 public class AdministrateurController {
     private final AdministrateurService administrateurService;
 
 
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+   //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PostMapping("/adddoctor")
     public Response adddoctor(
             @RequestBody @Valid doctorDto userRequest
@@ -32,7 +32,7 @@ public class AdministrateurController {
     )  {
         return administrateurService.adddoctor(userRequest);
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
+  // @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PutMapping("/updateuser/{userId}")
     public ResponseEntity<Response> updateUser(@PathVariable Long userId, @RequestBody @Valid UserDto userDto) {
         Optional<User> userOptional = administrateurService.findUserById(userId);
@@ -53,20 +53,20 @@ public class AdministrateurController {
         }
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+   // @PreAuthorize("hasAuthority(('ROLE_ADMIN')")
     @PutMapping("/revokeaccount")
     public ResponseEntity<Response> revokeAccount(@RequestParam String email, @RequestParam boolean activate) {
         Response response = administrateurService.revokeAccount(email, activate);
         return ResponseEntity.ok(response);
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
+    //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/usersexceptadmin")
     public ResponseEntity<List<UserDto>> getAllUsersExceptAdmin() {
         List<UserDto> users = administrateurService.getAllUsersExceptAdmin();
         return ResponseEntity.ok(users);
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+   // @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/users/{Id}")
     public ResponseEntity<User> getUserById(@PathVariable Long userId) {
         Optional<User> userOptional = administrateurService.findUserById(userId);

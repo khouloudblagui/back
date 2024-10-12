@@ -9,4 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface UserClient {
     @GetMapping("/api/v1/users/{userId}")
     UserDto getUserById(@PathVariable("userId") Long userId);
+
+    @GetMapping("/api/v1/auth/validate-token/{token}")
+    Boolean validateToken(@PathVariable("token") String token);
+
+    @GetMapping("/api/v1/auth/user-by-token/{token}")
+    UserDto getUserByToken(@PathVariable("token") String token);
 }

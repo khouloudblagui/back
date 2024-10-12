@@ -1,4 +1,12 @@
 
-b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ëøÈÊ
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ëøÈÊ8éô—ì§2
 {
-java:S3252"YUse static access with "org.example.authentification.auth.RegisterRequest" for "builder".(†«ßüÿÿÿÿ8ÈıÁÊ¥2
+java:S3252!"YUse static access with "org.example.authentification.auth.RegisterRequest" for "builder".(†«ßüÿÿÿÿ8Ÿõ—ì§2
+X	java:S125;"<This block of commented-out lines of code should be removed.(ÜñÜ8¥õ—ì§2
+H
+java:S1128"+Remove this unused import 'lombok.Builder'.(§’Ğß8íÒ˜ì§2
+h
+java:S1128"FRemove this unused import 'org.example.authentification.entites.Role'.(ç¿­Ğûÿÿÿÿ8¦õ—ì§2
+H
+java:S1128
+"+Remove this unused import 'java.util.Date'.(¸…¼ü8¦õ—ì§2

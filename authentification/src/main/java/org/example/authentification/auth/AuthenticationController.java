@@ -6,11 +6,10 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.authentification.dto.PatientDto;
 import org.example.authentification.dto.Response;
+import org.example.authentification.dto.UserDto;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.io.IOException;
@@ -47,6 +46,19 @@ public class AuthenticationController {
           HttpServletResponse response
   ) throws IOException {
     service.refreshToken(request, response);
+  }
+
+  // Nouveau point de terminaison pour valider un token
+  @GetMapping("/validate-token/{token}")
+  public ResponseEntity<Boolean> validateToken(@PathVariable String token) {
+    boolean isValid = service.validateToken(token);  // Appel de la méthode de validation dans AuthenticationService
+    return new ResponseEntity<>(isValid, HttpStatus.OK);
+  }
+
+  @GetMapping("/user-by-token/{token}")
+  public ResponseEntity<UserDto> getUserByToken(@PathVariable String token) {
+    UserDto userDto = service.getUserByToken(token);
+    return ResponseEntity.ok(userDto);
   }
 
 

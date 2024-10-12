@@ -25,7 +25,7 @@ public class PatientController {
 
     // Créer un nouveau patient
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Patient> createPatient(@RequestBody Patient patient) {
         Patient newPatient = patientService.createPatient(patient);
         return new ResponseEntity<>(newPatient, HttpStatus.CREATED);
@@ -48,7 +48,7 @@ public class PatientController {
 
     // Supprimer un patient
     @DeleteMapping("/{patientId}")
-    @PreAuthorize("hasRole('ADMIN')") // Seuls les admins peuvent supprimer un patient
+   // @PreAuthorize("hasRole('ADMIN')") // Seuls les admins peuvent supprimer un patient
     public ResponseEntity<Void> deletePatient(@PathVariable Long patientId) {
         patientService.deletePatient(patientId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
