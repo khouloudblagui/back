@@ -34,7 +34,7 @@ export class FormDialogComponent {
     // Set the defaults
     this.action = data.action;
     if (this.action === 'edit') {
-      this.dialogTitle = data.room.pName;
+      this.dialogTitle = data.room.patientName;
       this.room = data.room;
     } else {
       this.dialogTitle = 'New Room';
@@ -58,11 +58,11 @@ export class FormDialogComponent {
     return this.fb.group({
       id: [this.room.id],
       img: [this.room.img],
-      pName: [this.room.pName],
-      rType: [this.room.rType],
+      patientName: [this.room.patientName],
+      roomType: [this.room.roomType],
       admitDate: [this.room.admitDate],
       dischargeDate: [this.room.dischargeDate],
-      rNo: [this.room.rNo],
+      roomNumber: [this.room.roomNumber],
       gender: [this.room.gender],
     });
   }

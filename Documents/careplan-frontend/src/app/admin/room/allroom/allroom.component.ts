@@ -189,3 +189,83 @@ export class AllroomComponent extends UnsubscribeOnDestroyAdapter implements OnI
     });
   }
 }
+export class ExampleDataSource extends DataSource<Room> {
+  private dataChange = new BehaviorSubject<Room[]>([]);
+  get data(): Room[] { return this.dataChange.value; }
+
+  // Ajoutez ces propriétés
+  filteredData: Room[] = [];
+  renderedData: Room[] = [];
+  filterChange = new BehaviorSubject('');
+
+  get filter(): string {
+    return this.filterChange.value;
+  }
+
+  set filter(filter: string) {
+    this.filterChange.next(filter);
+  }
+
+  constructor(private roomService: RoomService, private paginator: MatPaginator, private sort: MatSort) {
+    super();
+    this.filterChange.subscribe(() => this.paginator.pageIndex = 0);
+  }
+
+  connect(): Observable<Room[]> {
+    const displayDataChanges = [
+      this.dataChange,
+      this.paginator.page,
+      this.sort.sortChange,
+      this.filterChange
+    ];
+
+    return merge(...displayDataChanges).pipe(
+      map(() => {
+        if (!this.roomService) {
+          return [];
+        }
+
+        this.filteredData = this.roomService.data.slice().filter((room: Room) => {
+          const searchStr = (room.roomNumber + room.patientName + room.roomType + room.gender).toLowerCase();
+          return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
+        });
+
+        const sortedData = this.sortData(this.filteredData.slice());
+        const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
+        this.renderedData = sortedData.splice(startIndex, this.paginator.pageSize);
+        return this.renderedData;
+      })
+    );
+  }
+
+  disconnect() {}
+
+  refreshData() {
+    this.roomService.getAllRooms(); // Assuming you have a method to fetch rooms
+  }
+
+  sortData(data: Room[]): Room[] {
+    if (!this.sort.active || this.sort.direction === '') {
+      return data;
+    }
+
+    return data.sort((a, b) => {
+      const isAsc = this.sort.direction === 'asc';
+      switch (this.sort.active) {
+        case 'roomNumber': return compare(a.roomNumber, b.roomNumber, isAsc);
+        case 'patientName': return compare(a.patientName, b.patientName, isAsc);
+        case 'roomType': return compare(a.roomType, b.roomType, isAsc);
+        case 'gender': return compare(a.gender, b.gender, isAsc);
+        case 'admitDate': return compare(a.admitDate, b.admitDate, isAsc);
+        case 'dischargeDate': return compare(a.dischargeDate, b.dischargeDate, isAsc);
+        default: return 0;
+      }
+    });
+  }
+}
+
+// Fonction utilitaire pour comparer les valeurs lors du tri
+function compare(a: string | number, b: string | number, isAsc: boolean) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+}
+
