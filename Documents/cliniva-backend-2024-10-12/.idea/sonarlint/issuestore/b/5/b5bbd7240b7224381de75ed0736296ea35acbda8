@@ -1,0 +1,8 @@
+
+r	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë¹ò·ÿÿÿÿÿ8ÈØ©2
+r	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úæôùÿÿÿÿ8ÉØ©2
+m	java:S117ß"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß¦Ãd8ÊØ©2
+n	java:S117ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å ¼Ç8ËØ©2
+^	java:S125–"<This block of commented-out lines of code should be removed.(´”–ğøÿÿÿÿ8Å‘Ø©2
+s
+java:S6201Ô"PReplace this instanceof check and cast with 'instanceof UserDetails userdetails'(ñ¢Ÿøÿÿÿÿ8à’Ø©2

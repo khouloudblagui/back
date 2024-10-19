@@ -1,0 +1,11 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ëô€
+n	java:S116"RRename this field "user_ky" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(” öó8¶åÎÖ©2
+E
+java:S19483"(Make "tokens" transient or serializable.(Š©™¬8¸åÎÖ©2
+X	java:S125("<This block of commented-out lines of code should be removed.(ë·õ8»åÎÖ©2
+]	java:S125-"<This block of commented-out lines of code should be removed.(¦ñÔØüÿÿÿÿ8»åÎÖ©2
+Z
+java:S1128"=Remove this unused import 'lombok.experimental.SuperBuilder'.(àçÄÑ8Íı‰Ü©2
+
+java:S1128	"_Remove this unused import 'org.springframework.security.core.authority.SimpleGrantedAuthority'.(– ‹Ìûÿÿÿÿ8Íı‰Ü©2

@@ -1,0 +1,55 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/databaseauthentification?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  servlet:
+    session:
+      timeout: 60s
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: khouloudblagui61@gmail.com
+    password: kuvp wehr rmol hcpn
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  config:
+    import: optional:configserver:http://localhost:8888
+
+application:
+  security:
+    jwt:
+      secret-key: 1sYLhJyQxEikctpRu1oTagw8NIPQaOFoGcTyaUsa0XE5YpJZ8+PcTyfC6jI8/JiM7IY3eZkXo+BAcvnpj76Qgqzcjn3Hk0n0hhnZWuiIdNysYVzZAwzjP8IPkR9xrczS3Xpc5Dww9SGS9D+dqdjBIcOQnsUE3focaeLVbHYK0DBL1qmMW1dYZeVwXOhjLNJH5C8G3zcuPAROKZ27ufl27jY47DuvR6feWI4MZBCy/VMrw5M3KgW0ZPxbyq0P1jS1LsLdjDEb8MMRsqJ+Ojn79VdqHi8JCk7NJmqTMwqfzcMDqy72FdB14dJzlb0aN53+TV6nNZ61DQEB2T/5YOmI4OaDTpx9NyXPDcK8D6cZQk8
+      expiration: 86400000
+      refresh-token:
+        expiration: 604800000
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG

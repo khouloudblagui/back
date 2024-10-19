@@ -1,0 +1,9 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†¿çÿøÿÿÿÿ
+n	java:S116"YRename this field "TemplateDoc_Ky" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùþ¼õ
+u	java:S116"[Rename this field "TemplateDoc_Desc" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØêÓ›ÿÿÿÿÿ
+w	java:S116"]Rename this field "TemplateDoc_Format" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Î²Æýÿÿÿÿ
+w	java:S116"bRename this field "TemplateDoc_PrntElmntTp" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ÇÈœ
+|	java:S116"bRename this field "TemplateDoc_PrntElmntKy" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ÐÞ“ýÿÿÿÿ
+7
+java:S1116"Remove this empty statement.(£‹ÌÁüÿÿÿÿ

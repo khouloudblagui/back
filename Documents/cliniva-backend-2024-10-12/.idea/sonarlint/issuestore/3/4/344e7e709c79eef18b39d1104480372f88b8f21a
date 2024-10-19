@@ -1,0 +1,10 @@
+
+k	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ÖÉÏûÿÿÿÿ
+k	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´¡±¥ýÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ž£ž‰
+k
+java:S3655U"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ìªß†úÿÿÿÿ
+e	java:S116#"PRename this field "MRepo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó÷Øá
+6	java:S131o""Add a default case to this switch.(É­°!
+n
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡ž¸Îùÿÿÿÿ
