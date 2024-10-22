@@ -1,0 +1,6 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†¿çÿøÿÿÿÿ
+t	java:S116!"_Rename this field "MedicIngredientLinks" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úõäµ
+E
+java:S1128
+"*Remove this unused import 'java.util.Set'.(ö²„¤þÿÿÿÿ

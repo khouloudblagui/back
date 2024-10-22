@@ -1,0 +1,11 @@
+
+s
+java:S1192R"QDefine a constant instead of duplicating this literal "/api/v1/admin/**" 5 times.(Õœ ÿÿÿÿÿ8Ö‹ı×©2
+n
+java:S1192@"RDefine a constant instead of duplicating this literal "/api/v1/doctor/**" 5 times.(ı€‘d8×‹ı×©2
+o
+java:S1192F"SDefine a constant instead of duplicating this literal "/api/v1/patient/**" 5 times.(ÀÑÙ8×‹ı×©2
+x
+java:S1192:"VDefine a constant instead of duplicating this literal "/api/v1/management/**" 5 times.(«½Ùıÿÿÿÿ8Ø‹ı×©2
+s
+java:S1192L"QDefine a constant instead of duplicating this literal "/api/v1/nurse/**" 5 times.(ñãöÅıÿÿÿÿ8Ø‹ı×©2
